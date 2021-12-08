@@ -1,8 +1,10 @@
 # Monest-Eco IA
 
-## Commandes  
+## Installation  
 - run `docker build --tag python-docker .`
-- run `docker run --rm -itv $(pwd):/app -w /app python-docker /bin/zsh`
+
+## Commandes  
+- run `docker run --rm -itv $(pwd):/app -w /app python-docker /bin/bash`
 - run `python3 src/main.py`
 
 ## Référents  
