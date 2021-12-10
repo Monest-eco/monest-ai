@@ -35,8 +35,9 @@ class Model():
         if not self.__has_file:
             if activation in self.__activations:
                 if len(self.__layers) > 0:
-                    if self.__layers[-1]['neurons'] <= neurons:
-                        raise InvalidNeurons.InvalidNeurons("Too many neurons for this layer", neurons)
+                    if self.__layers[-1]['type'] == "Dense":
+                        if self.__layers[-1]['neurons'] <= neurons:
+                            raise InvalidNeurons.InvalidNeurons("Too many neurons for this layer", neurons)
                 self.__layers.append({"neurons": neurons, "activation": activation, "type": "Dense"})
             else:
                 raise WrongActivation.WrongActivation("Undefined activation", activation)
