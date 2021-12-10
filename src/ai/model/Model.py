@@ -51,7 +51,7 @@ class Model():
         else:
             raise LoadedModel.LoadedModel("A model is loaded")
 
-    def compile(self, loss, optimizer="sgd", metrics=["accuracy"]):
+    def compile(self, loss="sparse_categorical_crossentropy", optimizer="sgd", metrics=["accuracy"]):
         if not self.__has_file:
             if len(self.__layers) > 0:
                 for layer in self.__layers:
