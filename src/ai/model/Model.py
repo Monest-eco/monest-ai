@@ -81,7 +81,7 @@ class Model():
 
     def save(self):
         if self.__save and (self.__compiled or self.__has_file):
-            self.__model.save(self.__path + "/" + self.__file_name)
+            self.__model.save(self.__path + "/" + self.__file_name + ".h5")
         else:
             raise NoSaveMode.NoSaveMode("This model is started in no save mode")
 
