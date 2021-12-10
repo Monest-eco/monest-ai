@@ -39,3 +39,17 @@ class Dataset():
                     metadata[i][0].put(x, self.__datas[index]["intensity"])
                     index += 1
         return metadata
+
+    def get_label_values(self):
+        data = []
+
+        for dic in self.__datas:
+            data.append(dic["name"])
+        return data
+
+    def timestamp_values(self):
+        data = []
+
+        for dic in self.__datas:
+            data.append(dic['time'])
+        return data
