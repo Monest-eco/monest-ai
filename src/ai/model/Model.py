@@ -46,8 +46,6 @@ class Model():
 
     def add_flatten_layer(self, shape):
         if not self.__has_file:
-            if len(shape) != 2:
-                raise InvalidShape.InvalidShape("Shape size is invalid", len(shape))
             self.__layers.append({"shape": shape, "type": "Flatten"})
         else:
             raise LoadedModel.LoadedModel("A model is loaded")
@@ -84,6 +82,9 @@ class Model():
             self.__model.save(self.__path + "/" + self.__file_name + ".h5")
         else:
             raise NoSaveMode.NoSaveMode("This model is started in no save mode")
+
+    def has_file(self):
+        return self.__has_file
 
     def get_loss_curve(self):
         if self.__history != None:

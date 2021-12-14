@@ -5,6 +5,9 @@ import numpy as np
 
 class Dataset():
 
+    # Constants
+    __labels = {"nothing": 0, "fridge": 1, "oven": 2}
+
     # Dataset parameters
     __file = None
     __datas = None
@@ -30,21 +33,23 @@ class Dataset():
 
         if len(self.__datas) % n != 0:
             nb += 1
-        metadata = np.ndarray(shape=(nb, 1, n), dtype=np.ndarray)
+        metadata = np.ndarray(shape=(nb, n), dtype=np.float32)
         metadata.fill(0)
         index = 0
         for i in range(0, len(metadata)):
-            for x in range(0, len(metadata[i][0])):
+            for x in range(0, len(metadata[i])):
                 if index < len(self.__datas):
-                    metadata[i][0].put(x, self.__datas[index]["intensity"])
+                    metadata[i].put(x, self.__datas[index]["intensity"])
                     index += 1
-        return metadata
+        return (metadata - np.mean(metadata)) / np.std(metadata)
 
     def get_label_values(self):
-        data = []
+        data = np.ndarray(shape=(len(self.__datas)), dtype=int)
+        data.fill(0)
 
-        for dic in self.__datas:
-            data.append(dic["name"])
+        for i in range(0, len(self.__datas)):
+            dic = self.__datas[i]
+            data.put(i, self.__labels.get(dic["name"]))
         return data
 
     def timestamp_values(self):

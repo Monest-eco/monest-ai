@@ -11,13 +11,14 @@ if __name__ == "__main__":
         model = Model.Model(file.get_file_path(0), True, file.get_file_name(0), file.get_file_path(0))
     else:
         model = Model.Model(save=True, name="ai_result", path="./bin")
-        model.add_flatten_layer([1, 300])
+        model.add_flatten_layer([300])
         model.add_dense_layer(500, "relu")
         model.add_dense_layer(250, "relu")
         model.add_dense_layer(2, "sigmoid")
         model.compile()
         model.save()
-    # data = Dataset.Dataset("./bin/data_fridge.json")
+    # data = Dataset.Dataset("./bin/datas/data_fridge3.json")
     # metadata = data.get_shape_values(300)
-    # for i in range(0, len(metadata)):
-    #     model.fit()
+    # labels = data.get_label_values()
+    # labels = labels[:len(metadata)]
+    # model.fit(metadata, labels, 40)
