@@ -85,4 +85,4 @@ class File():
             raise FileExtension.FileExtension("Wrong extension", path.split('.')[-1])
         if not os.path.isfile(path):
             raise UnreadFile.UnreadFile("File is not exist", path)
-        self.__files.append({"path": path, "name": path.split('/')[-1].split('.h5')[0]})
+        self.__backup_files.append({"path": path, "name": path.split('/')[-1].split('.h5')[0]})
