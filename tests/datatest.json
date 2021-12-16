@@ -1,80 +1,80 @@
 [
     {
       "id": 1,
-      "intensity": 169,
+      "data_esp32": 169,
       "name": "fridge",
-      "time": 1639144891053
+      "date_esp32": 1639144891053
     },
     {
       "id": 2,
-      "intensity": 168,
+      "data_esp32": 168,
       "name": "fridge",
-      "time": 1639144892055
+      "date_esp32": 1639144892055
     },
     {
       "id": 3,
-      "intensity": 162,
+      "data_esp32": 162,
       "name": "fridge",
-      "time": 1639144893056
+      "date_esp32": 1639144893056
     },
     {
       "id": 4,
-      "intensity": 165,
+      "data_esp32": 165,
       "name": "fridge",
-      "time": 1639144894058
+      "date_esp32": 1639144894058
     },
     {
       "id": 5,
-      "intensity": 169,
+      "data_esp32": 169,
       "name": "fridge",
-      "time": 1639144895059
+      "date_esp32": 1639144895059
     },
     {
       "id": 6,
-      "intensity": 167,
+      "data_esp32": 167,
       "name": "fridge",
-      "time": 1639144896060
+      "date_esp32": 1639144896060
     },
     {
       "id": 7,
-      "intensity": 163,
+      "data_esp32": 163,
       "name": "fridge",
-      "time": 1639144897061
+      "date_esp32": 1639144897061
     },
     {
       "id": 8,
-      "intensity": 160,
+      "data_esp32": 160,
       "name": "fridge",
-      "time": 1639144898062
+      "date_esp32": 1639144898062
     },
     {
       "id": 9,
-      "intensity": 160,
+      "data_esp32": 160,
       "name": "fridge",
-      "time": 1639144899064
+      "date_esp32": 1639144899064
     },
     {
       "id": 10,
-      "intensity": 165,
+      "data_esp32": 165,
       "name": "fridge",
-      "time": 1639144900065
+      "date_esp32": 1639144900065
     },
     {
       "id": 11,
-      "intensity": 169,
+      "data_esp32": 169,
       "name": "fridge",
-      "time": 1639144901065
+      "date_esp32": 1639144901065
     },
     {
       "id": 12,
-      "intensity": 161,
+      "data_esp32": 161,
       "name": "fridge",
-      "time": 1639144902066
+      "date_esp32": 1639144902066
     },
     {
       "id": 13,
-      "intensity": 169,
+      "data_esp32": 169,
       "name": "fridge",
-      "time": 1639144903068
+      "date_esp32": 1639144903068
     }
   ]
