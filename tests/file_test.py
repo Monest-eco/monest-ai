@@ -1,11 +1,9 @@
 import unittest
 import sys
 sys.path.append("src/")
-from ai.file import *
-from ai.dataset import *
-from ai.model import *
+from ai.file.File import File
 
-file = File.File("./tests/")
+file = File("./tests/")
 
 class TestFile(unittest.TestCase):
 
