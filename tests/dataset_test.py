@@ -1,9 +1,9 @@
 import unittest
 import sys
 sys.path.append("src/")
-from ai.dataset.Dataset import Dataset
+from ai.dataset.DatasetJSON import DatasetJSON
 
-dataset = Dataset("./tests/datatest.json")
+dataset = DatasetJSON("./tests/datatest.json")
 
 class TestDataset(unittest.TestCase):
     def test_get_datas(self):
