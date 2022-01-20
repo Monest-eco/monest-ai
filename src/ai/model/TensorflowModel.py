@@ -15,11 +15,12 @@ from ai.exceptions.model.WrongActivation import WrongActivation
 from ai.exceptions.model.InvalidCurve import InvalidCurve
 
 class TensorflowModel(Model):
+    """This class is used to make a machine learning using TensorFlow."""
 
     # Class parameters and constants
     __activations = ["relu", "softmax", "tanh", "sigmoid", "linear"]
 
-    def __init__(self, file = None, save = False, name = None, path = None):
+    def __init__(self, file: str = None, save: bool = False, name: str = None, path: str = None):
         if file != None:
             self._has_file = True
             self._model = tf.keras.models.load_model(file)
@@ -31,7 +32,8 @@ class TensorflowModel(Model):
             self._path = path
             self._compiled = True
 
-    def add_layer(self, layer_type, datas):
+    def add_layer(self, layer_type: TensorflowEnum, datas: dict):
+        """Add a layer to your AI"""
         if not self._has_file:
             if layer_type == TensorflowEnum.DENSE:
                 neurons = datas["neurons"]
@@ -54,6 +56,7 @@ class TensorflowModel(Model):
             raise LoadedModel("A model is loaded")
 
     def compile(self, loss="sparse_categorical_crossentropy", optimizer="sgd", metrics=["accuracy"]):
+        """Compile your AI for using it"""
         if not self._has_file:
             if len(self._layers) > 0:
                 for layer in self._layers:
@@ -69,24 +72,28 @@ class TensorflowModel(Model):
             raise LoadedModel("A model is loaded")
 
     def fit(self, values, labels, epochs):
+        """Train your AI with this function"""
         if self._compiled or self._has_file:
             self._history = self._model.fit(values, labels, epochs=epochs)
         else:
             raise NoCompilation("Model is not compiled")
 
     def predict(self, value):
+        """Make a prediction of the electrical curve, return probabilities"""
         if self._compiled or self._has_file:
             return self._model.predict(value)
         else:
             raise NoCompilation("Model is not compiled")
 
     def save(self):
+        """Save your AI model after his compilation and training"""
         if self._save and (self._compiled or self._has_file):
             self._model.save(self._path + "/" + self._file_name + ".h5")
         else:
             raise NoSaveMode("This model is started in no save mode")
 
     def get_curve(self, curve_type):
+        """Get the training curve, loss and accuracy"""
         if curve_type == TensorCurve.LOSS:
             if self._history != None:
                 return self._history.history["loss"]
